@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="" width="device-width,initial-scale=1.0">
+        <title> Slides </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="gallery-wrap">
+            <img src="back.png" id="backbtn">
+            <div class="gallery">
+                <div>
+                    <span> 
+                        <a href="Photo.html"><img src="nature.webp"></span></a>
+                    <span>
+                        <a href="Violin.html"> <img src="violin.jpg"></span></a>
+                    <span>
+                        <a href="Dress.html"> <img src="dress.jpg"></span></a>
+                    <span>
+                         <a href="quotes.html"><img src="quotes.jpg"></span></a>
+                </div>
+            </div>
+            <img src="next.png" id="nextbtn">
+
+        </div>
+        <script>
+            let scrollContainer=document.querySelector(".gallery");
+            let back=document.getElementById("backbtn");
+            let next=document.getElementById("nextbtn");
+
+            /* To make the picture move when the mouse scrolled*/
+            scrollContainer.addEventListener("wheel", (evt) =>{
+                evt.preventDefault();
+                scrollContainer.scrollLeft+=evt.deltaY;
+                scrollContainer.style.scrollBehavior="auto";
+            });
+
+            next.addEventListener("click", ()=>{
+                scrollContainer.style.scrollBehavior="smooth";
+                scrollContainer.scrollLeft+=900;
+            });
+
+            back.addEventListener("click", ()=>{
+                scrollContainer.style.scrollBehavior="smooth";
+                scrollContainer.scrollLeft-=900;
+            });
+        </script>
+        
+    </body>
+
+</html>
